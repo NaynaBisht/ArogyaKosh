@@ -49,7 +49,7 @@
 </head>
 <body>
 
-    <iframe src="header.html" style="height:65; width:100%;"></iframe>
+    <iframe src="header.php" style="height:65; width:100%;"></iframe>
 
     <div class=" background_image">
         
@@ -66,10 +66,10 @@
             <br>
             <p class="text-gray-500 text-center">Please fill in this form to create an account.</p>
 
-            <p class="text-gray-500 text-center mt-3">Already have an account? <a href="login.html" class="text-blue-500">Sign In</a></p>
+            <p class="text-gray-500 text-center mt-3">Already have an account? <a href="login.php" class="text-blue-500">Sign In</a></p>
 
             <hr class="my-5">
-    
+
                 <div class="text-left mb-5">
     
                     <div class="flex justify-between items-center mb-2">
@@ -109,18 +109,14 @@
                     </div>
                     
                     <div>
-                        <a href="login.html" class="bg-blue-500 text-white p-2 rounded-lg hover:bg-blue-700 block w-full text-center">Sign Up</a>
+                        <a href="login.php" class="bg-blue-500 text-white p-2 rounded-lg hover:bg-blue-700 block w-full text-center">Sign Up</a>
                     </div>
                     
                 </div>
-            </form>
         </div>
     </div>
 
-
-
-    <iframe src="footer.html" style="height:40%; width:100%;"></iframe>
-
+    <iframe src="footer.php" style="height:40%; width:100%;"></iframe>
 
 </body>
 </html>
