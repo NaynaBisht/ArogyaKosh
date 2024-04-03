@@ -53,7 +53,7 @@
 
     <div class=" background_image">
         
-        <form action="loginpatient.php" method="post" class="form-container border-gray-300 p-3 border-2 w-1/2">
+        <form action="login.php" method="post" class="form-container border-gray-300 p-3 border-2 w-1/2">
 
             <h1 class="text-3xl font-bold text-center">Sign In</h1>
 
@@ -89,7 +89,7 @@
                     <input type="hidden" name="csrf_token" value="a2f3b4e5c6d7e8f9">
                     <input type="hidden" name="csrf_token" value="a2f3b4e5c6d7e8f9">     </div>
 
-                    <p class="text-gray-500 text-center mt-3">Don't have an account? <a href="index.php" class="text-blue-500">Sign up</a></p>
+                    <p class="text-gray-500 text-center mt-3">Don't have an account? <a href="landing.php" class="text-blue-500">Sign up</a></p>
                 </div>
         </form>
         
