@@ -88,104 +88,103 @@
         
         <div class="form-container border-gray-300 p-3 border-2 w-1/2 ">
 
-            <h1 class="text-3xl font-bold text-center">Sign Up</h1>
-            <br>
-            <p class="text-gray-500 text-center">Please fill in this form to create an account.</p>
+            <form id="signupForm" method="POST" action="backend_script.php">
 
-            <p class="text-gray-500 text-center mt-3">Already have an account? <a href="login.php" class="text-blue-500">Sign In</a></p>
+                <h1 class="text-3xl font-bold text-center">Sign Up</h1>
+                <br>
+                <p class="text-gray-500 text-center">Please fill in this form to create an account.</p>
 
-            <hr class="my-5">
+                <p class="text-gray-500 text-center mt-3">Already have an account? <a href="login.php" class="text-blue-500">Sign In</a></p>
 
-            <!-- Dropdown for user type -->
-            <div class="flex justify-center items-center mb-4">
-                <select id="userType" class="border-2 border-gray-300 p-2 rounded-lg" onchange="showFields()">
-                    <option value="" disabled selected>Select User Type</option>
-                    <option value="patient">Patient</option>
-                    <option value="institute">Institute</option>
-                    <option value="doctor">Doctor</option>
-                </select>
-            </div>
+                <hr class="my-5">
+
+                <!-- Dropdown for user type -->
+                <div class="flex justify-center items-center mb-4">
+                    <select id="userType" class="border-2 border-gray-300 p-2 rounded-lg" onchange="showFields()">
+                        <option value="" disabled selected>Select User Type</option>
+                        <option value="patient">Patient</option>
+                        <option value="institute">Institute</option>
+                        <option value="doctor">Doctor</option>
+                    </select>
+                </div>
 
             <!-- Patient fields -->
             <div id="patientFields" style="display: none;">
-                <!-- Add patient-specific fields here -->
-                
                 <div class="text-left mb-5">
-    
+
                     <div class="flex justify-between items-center mb-2">
                         <label for="name" class="mr-2 font-semibold">Full Name :</label>
-                        <input type="text" id="name" placeholder="Enter your full name" class="border-2 border-gray-300 p-2 rounded-lg mr-14">
+                        <input type="text" id="name" name="name" placeholder="Enter your full name" class="border-2 border-gray-300 p-2 rounded-lg mr-14">
                     </div>
-                    
-    
+
                     <div class="flex justify-between items-center mb-2">
                         <label for="username" class="mr-2 font-semibold">Username :</label>
-                        <input type="text" id="username" placeholder="Enter your username" class="border-2 border-gray-300 p-2 rounded-lg mr-14">
+                        <input type="text" id="username" name="username" placeholder="Enter your username" class="border-2 border-gray-300 p-2 rounded-lg mr-14">
                     </div>
-    
+
                     <div class="flex justify-between items-center mb-2">
                         <label for="password" class="mr-2 font-semibold">Password :</label>
-                        <input type="password" id="password" placeholder="Enter your password" class="border-2 border-gray-300 p-2 rounded-lg mr-14">
+                        <input type="password" id="password" name="password" placeholder="Enter your password" class="border-2 border-gray-300 p-2 rounded-lg mr-14">
                     </div>
-    
+
                     <div class="flex justify-between items-center mb-2">
                         <label for="confirm-password" class="mr-2 font-semibold">Confirm Password :</label>
-                        <input type="password" id="confirm-password" placeholder="Confirm your password" class="border-2 border-gray-300 p-2 rounded-lg mr-14">
+                        <input type="password" id="confirm-password" name="confirm_password" placeholder="Confirm your password" class="border-2 border-gray-300 p-2 rounded-lg mr-14">
                     </div>
-    
+
                     <div class="flex justify-between items-center mb-2">
                         <label for="dob" class="mr-2 font-semibold">Date of Birth :</label>
-                        <input type="date" id="dob" class="border-2 border-gray-300 p-2 rounded-lg mr-24">
+                        <input type="date" id="dob" name="dob" class="border-2 border-gray-300 p-2 rounded-lg mr-24">
                     </div>
-    
+
                     <div class="flex justify-between items-center mb-2">
                         <label for="aadhar" class="mr-2 font-semibold">Aadhar Number :</label>
-                        <input type="text" id="aadhar" placeholder="XXXX-XXXX-XXXX" class="border-2 border-gray-300 p-2 rounded-lg mr-14">
+                        <input type="text" id="aadhar" name="aadhar" placeholder="XXXX-XXXX-XXXX" class="border-2 border-gray-300 p-2 rounded-lg mr-14">
                     </div>
-    
+
                     <div class="flex justify-between items-center mb-2">
                         <label for="phone" class="mr-2 font-semibold">Phone Number :</label>
-                        <input type="text" id="phone" placeholder="Enter your phone number" class="border-2 border-gray-300 p-2 rounded-lg mr-14">
+                        <input type="text" id="phone" name="phone" placeholder="Enter your phone number" class="border-2 border-gray-300 p-2 rounded-lg mr-14">
                     </div>
                 </div>
             </div>
+
 
 
             <!-- Institute fields -->
             <div id="instituteFields" style="display: none;">
-                <!-- Add institute-specific fields here -->
-
                 <div class="text-left mb-5">
-        
+
                     <div class="flex justify-between items-center mb-2">
                         <label for="institute_name" class="mr-2 font-semibold">Institute Name :</label>
-                        <input type="text" id="institute_name" placeholder="Enter institute name" class="border-2 border-gray-300 p-2 rounded-lg mr-14">
+                        <input type="text" id="institute_name" name="institute_name" placeholder="Enter institute name" class="border-2 border-gray-300 p-2 rounded-lg mr-14">
                     </div>
-        
+
                     <div class="flex justify-between items-center mb-2">
                         <label for="license" class="mr-2 font-semibold">License :</label>
-                        <input type="text" id="license" placeholder="Enter license number" class="border-2 border-gray-300 p-2 rounded-lg mr-14">
+                        <input type="text" id="license" name="license" placeholder="Enter license number" class="border-2 border-gray-300 p-2 rounded-lg mr-14">
                     </div>
-        
+
                     <div class="flex justify-between items-center mb-2">
                         <label for="institute_id" class="mr-2 font-semibold">Institute ID :</label>
-                        <input type="text" id="institute_id" placeholder="Enter institute ID" class="border-2 border-gray-300 p-2 rounded-lg mr-14">
+                        <input type="text" id="institute_id" name="institute_id" placeholder="Enter institute ID" class="border-2 border-gray-300 p-2 rounded-lg mr-14">
                     </div>
-        
+
                     <div class="flex justify-between items-center mb-2">
                         <label for="phone" class="mr-2 font-semibold">Phone Number :</label>
-                        <input type="text" id="phone" placeholder="Enter your phone number" class="border-2 border-gray-300 p-2 rounded-lg mr-14">
+                        <input type="text" id="phone" name="phone" placeholder="Enter your phone number" class="border-2 border-gray-300 p-2 rounded-lg mr-14">
                     </div>
+                    
                 </div>
-
+            
             </div>
+
 
 
 
             <!-- Doctor fields -->
             <div id="doctorFields" style="display: none;">
                 <!-- Add doctor-specific fields here -->
-
                 <div class="text-left mb-5">
                     <div class="flex justify-between items-center mb-2">
                         <label for="doctor_name" class="mr-2 font-semibold">Doctor Name :</label>
@@ -207,19 +206,13 @@
                         <input type="text" id="address" placeholder="Enter your address" class="border-2 border-gray-300 p-2 rounded-lg mr-14">
                     </div>
                 </div>
-
+            
             </div>
-
-            <!-- Common fields -->
-            <div class="text-left mb-5">
-                <!-- Common fields for all user types -->
-            </div>
-
             <!-- Sign Up button -->
-            <div>
-                <a href="login.php" class="bg-blue-500 text-white p-2 rounded-lg hover:bg-blue-700 block w-full text-center">Sign Up</a>
-            </div>
-                    
+                <div>
+                    <a href="login.php" class="bg-blue-500 text-white p-2 rounded-lg hover:bg-blue-700 block w-full text-center">Sign Up</a>
+                </div>
+            </form>
         </div>
     </div>
 
