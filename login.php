@@ -62,8 +62,8 @@
                 <div class="text-left mb-5">
     
                     <div class="flex justify-between items-center mb-2">
-                        <label for="username" class="mr-2 font-semibold">Username :</label>
-                        <input type="text" id="username" placeholder="Enter your username" class="border-2 border-gray-300 p-2 rounded-lg mr-14">
+                        <label for="username" class="mr-2 font-semibold">User/Institute ID :</label>
+                        <input type="text" id="username" placeholder="Enter your ID" class="border-2 border-gray-300 p-2 rounded-lg mr-14">
                     </div>
     
                     <div class="flex justify-between items-center mb-2">
