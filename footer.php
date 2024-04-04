@@ -6,7 +6,11 @@
     <title>Footer</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="flex flex-col justify-between min-h-screen">
+
+    <main class="flex-grow overflow-y-auto">
+    </main>
+
     <footer class="bg-gray-800 text-white">
         <div class="container mx-auto flex flex-col items-center justify-center px-4 py-6">
             <ul class="flex items-center justify-center mb-4">
