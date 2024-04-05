@@ -1,5 +1,5 @@
 <?php
-    if(isset($_POST["submit"]) and empty($_POST["aadhar"])){
+    if(isset($_POST["submit"]) and !(empty($_POST["aadhar"]))){
 
         $name = $_POST["name"];
         $username = $_POST["username"];
