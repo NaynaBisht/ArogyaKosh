@@ -1,7 +1,7 @@
 <?php
-    function emptyInputSignup($name, $regnum, $pwd, $phno){
+    function emptyInputSignup($name, $username, $pwd, $phno, $dob, $aadhar){
         $result = true;
-        if(empty($name) || empty($regnum) || empty($pwd) || empty($phno)){
+        if(empty($name) || empty($username) || empty($pwd) || empty($phno) || empty($dob) || empty($aadhar)){
             $result = true;
     }
     else{
@@ -9,14 +9,14 @@
     }
     return $result;
 }
-function uidExists($conn ,$regnum){
-    $sql = "SELECT * FROM users WHERE usersRegnum = ?;";
+function uidExists($conn ,$username){
+    $sql = "SELECT * FROM patient WHERE uid = ?;";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)){
-        header("location: ../RegisterStudent.php?error=stmtfail");
+        header("location: ../landing.php?error=stmtfail");
         exit();
     }
-    mysqli_stmt_bind_param($stmt, 's', $regnum);
+    mysqli_stmt_bind_param($stmt, 's', $username);
     mysqli_stmt_execute($stmt);
 
     $resultdata = mysqli_stmt_get_result($stmt);
@@ -27,25 +27,25 @@ function uidExists($conn ,$regnum){
         return $result;
     }
 }
-function createUser($conn, $name, $regnum, $pwd, $phno){
-    $sql = "INSERT INTO users (usersName, usersRegnum, usersPwd, usersNo) VALUES (?,?,?,?);";
+function createUser($conn, $name, $username, $pwd, $phno, $dob, $aadhar){
+    $sql = "INSERT INTO patient (name, uid, pwd, phno, dob, aadhar) VALUES (?,?,?,?, ?, ?);";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)){
-        header("location: ../RegisterStudent.php?error=stmtfailed");
+        header("location: ../landing.php?error=stmtfailed");
         exit();
     }
 
     $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
-    mysqli_stmt_bind_param($stmt, "ssss", $name, $regnum, $hashedPwd, $phno);
+    mysqli_stmt_bind_param($stmt, "ssssss", $name, $username, $hashedPwd, $phno, $dob, $aadhar);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
-    header("location: ../RegisterStudent.php?error=none");
+    header("location: ../landing.php?error=none");
     exit();
 }
 
-function emptyInputLogin($regnum, $pwd){
+function emptyInputLogin($username, $pwd){
     $result = true;
-    if(empty($regnum) || empty($pwd)){
+    if(empty($username) || empty($pwd)){
         $result = true;
     }
     else{
@@ -54,22 +54,22 @@ function emptyInputLogin($regnum, $pwd){
     return $result;
 }
 
-function loginUser($conn, $regnum, $pwd){
-    $regnumexists = uidExists($conn, $regnum);
+function loginUser($conn, $username, $pwd){
+    $regnumexists = uidExists($conn, $username);
     if($regnumexists == false){
-        header("location: ../studentlogin.php?error=wronglogin");
+        header("location: ../login.php?error=wronglogin");
         exit();
     }
-    $pwdhashed = $regnumexists["usersPwd"];
+    $pwdhashed = $regnumexists["pwd"];
     $checkPwd = password_verify($pwd, $pwdhashed);
     if($checkPwd == false){
-        header("location: ../studentlogin.php?error=wrongpassword");
+        header("location: ../login.php?error=wrongpassword");
         exit();
     }
     else if($checkPwd == true){
         session_start();
-        $_SESSION["regnumber"] = $regnumexists["regnum"];
-        header("location: ../studentHomePg.php");
+        $_SESSION["username"] = $regnumexists["uid"];
+        header("location: ../login.php");
         exit(); 
     }
 }
