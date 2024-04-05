@@ -99,7 +99,7 @@
         
         <div class="form-container border-gray-300 p-3 border-2 w-1/2 ">
 
-            <form id="signupForm" method="POST" action="includes/signup.inc.php">
+            <form method="POST" action="includes/signup.inc.php">
 
                 <h1 class="text-3xl font-bold text-center">Sign Up</h1>
                 <br>
