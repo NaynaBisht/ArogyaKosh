@@ -3,10 +3,11 @@
 
         $name = $_POST["name"];
         $username = $_POST["username"];
-        $dob = $_POST["dob"];
         $pwd = $_POST["password"];
-        $phno = $_POST["phone"];
+        $dob = $_POST["dob"];
         $aadhar = $_POST["aadhar"];
+        $phno = $_POST["phone"];
+        
 
         require_once 'dbh.inc.php';
         require_once 'functions.inc.php';
