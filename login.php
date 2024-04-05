@@ -75,8 +75,8 @@
                         <label for="user-type" class="mr-2 font-semibold">User Type :</label>
                         <select class="border-2 border-gray-300 px-14 py-2 rounded-lg mr-16" id="user-type" >
                             <option value="patient">Patient</option>
-                            <option value="doctor">Doctor</option>
-                            <option value="admin">Admin</option>
+                            <option value="doctor">Institute</option>
+                            <option value="admin">Doctor</option>
                             <option value="lab">Lab</option>
 
                         </select>
