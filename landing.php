@@ -181,6 +181,16 @@
                     </div>
 
                     <div class="flex justify-between items-center mb-2">
+                        <label for="password" class="mr-2 font-semibold">Password :</label>
+                        <input type="password" id="password" name="password" placeholder="Enter your password" class="border-2 border-gray-300 p-2 rounded-lg mr-14">
+                    </div>
+
+                    <div class="flex justify-between items-center mb-2">
+                        <label for="address" class="mr-2 font-semibold">Address :</label>
+                        <input type="text" id="address" name="address" placeholder="Enter your phone number" class="border-2 border-gray-300 p-2 rounded-lg mr-14">
+                    </div>
+
+                    <div class="flex justify-between items-center mb-2">
                         <label for="phone" class="mr-2 font-semibold">Phone Number :</label>
                         <input type="text" id="phone" name="phone" placeholder="Enter your phone number" class="border-2 border-gray-300 p-2 rounded-lg mr-14">
                     </div>
@@ -246,7 +256,7 @@
 
             <!-- Sign Up button -->
                 <div>
-                    <a href="login.php" class="bg-blue-500 text-white p-2 rounded-lg hover:bg-blue-700 block w-full text-center">Sign Up</a>
+                    <button type="submit" name = "submit" class="bg-blue-500 text-white p-2 rounded-lg hover:bg-blue-700 block w-full text-center">Sign Up</a>
                 </div>
             </form>
             <?php
@@ -254,7 +264,7 @@
                         if($_GET["error"] == "emptyinput"){
                             echo "<p>Fill in all the Fields!</p>";
                         }
-                        else if($_GET["error"] == "regnumberexists"){
+                        else if($_GET["error"] == "usernameexists"){
                             echo "<p>Registration number already exists.</p>";
                         }
                         else if($_GET["error"] == "stmtfail" || $_GET["error"] == "stmtfailed") {
