@@ -99,7 +99,7 @@
         
         <div class="form-container border-gray-300 p-3 border-2 w-1/2 ">
 
-            <form id="signupForm" method="POST" action="backend_script.php">
+            <form id="signupForm" method="POST" action="includes/signup.inc.php">
 
                 <h1 class="text-3xl font-bold text-center">Sign Up</h1>
                 <br>
@@ -249,6 +249,22 @@
                     <a href="login.php" class="bg-blue-500 text-white p-2 rounded-lg hover:bg-blue-700 block w-full text-center">Sign Up</a>
                 </div>
             </form>
+            <?php
+                    if(isset($_GET["error"])) {
+                        if($_GET["error"] == "emptyinput"){
+                            echo "<p>Fill in all the Fields!</p>";
+                        }
+                        else if($_GET["error"] == "regnumberexists"){
+                            echo "<p>Registration number already exists.</p>";
+                        }
+                        else if($_GET["error"] == "stmtfail" || $_GET["error"] == "stmtfailed") {
+                            echo "<p>Please try again.</p>";
+                        }
+                        else if($_GET["error"] == "none") {
+                            echo "<p>You have registered successfully!</p>";
+                        }
+                    }
+                ?>
         </div>
     </div>
 
