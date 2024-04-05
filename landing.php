@@ -52,23 +52,34 @@
             var patientFields = document.getElementById("patientFields");
             var instituteFields = document.getElementById("instituteFields");
             var doctorFields = document.getElementById("doctorFields");
+            var labFields = document.getElementById("labFields");
 
             if (userType === "patient") {
                 patientFields.style.display = "block";
                 instituteFields.style.display = "none";
                 doctorFields.style.display = "none";
+                labFields.style.display = "none";
             } else if (userType === "institute") {
                 patientFields.style.display = "none";
                 instituteFields.style.display = "block";
                 doctorFields.style.display = "none";
+                labFields.style.display = "none";
             } else if (userType === "doctor") {
                 patientFields.style.display = "none";
                 instituteFields.style.display = "none";
                 doctorFields.style.display = "block";
-            } else {
+                labFields.style.display = "none";
+            } else if (userType === "lab"){
                 patientFields.style.display = "none";
                 instituteFields.style.display = "none";
                 doctorFields.style.display = "none";
+                labFields.style.display = "block";
+            }
+            else {
+                patientFields.style.display = "none";
+                instituteFields.style.display = "none";
+                doctorFields.style.display = "none";
+                labFields.style.display = "none";
             }
         }
     </script>
@@ -105,6 +116,7 @@
                         <option value="patient">Patient</option>
                         <option value="institute">Institute</option>
                         <option value="doctor">Doctor</option>
+                        <option value="lab">Pathology Labs</option>
                     </select>
                 </div>
 
@@ -149,8 +161,6 @@
                 </div>
             </div>
 
-
-
             <!-- Institute fields -->
             <div id="instituteFields" style="display: none;">
                 <div class="text-left mb-5">
@@ -174,13 +184,8 @@
                         <label for="phone" class="mr-2 font-semibold">Phone Number :</label>
                         <input type="text" id="phone" name="phone" placeholder="Enter your phone number" class="border-2 border-gray-300 p-2 rounded-lg mr-14">
                     </div>
-                    
                 </div>
-            
             </div>
-
-
-
 
             <!-- Doctor fields -->
             <div id="doctorFields" style="display: none;">
@@ -206,8 +211,39 @@
                         <input type="text" id="address" placeholder="Enter your address" class="border-2 border-gray-300 p-2 rounded-lg mr-14">
                     </div>
                 </div>
-            
             </div>
+
+            <!-- Lab fields -->
+            <div id="labFields" style="display: none;">
+                <div class="text-left mb-5">
+
+                    <div class="flex justify-between items-center mb-2">
+                        <label for="institute_name" class="mr-2 font-semibold">Lab Name :</label>
+                        <input type="text" id="institute_name" name="institute_name" placeholder="Enter institute name" class="border-2 border-gray-300 p-2 rounded-lg mr-14">
+                    </div>
+
+                    <div class="flex justify-between items-center mb-2">
+                        <label for="license" class="mr-2 font-semibold">License :</label>
+                        <input type="text" id="license" name="license" placeholder="Enter license number" class="border-2 border-gray-300 p-2 rounded-lg mr-14">
+                    </div>
+
+                    <div class="flex justify-between items-center mb-2">
+                        <label for="institute_id" class="mr-2 font-semibold">Lab ID :</label>
+                        <input type="text" id="institute_id" name="institute_id" placeholder="Enter Lab ID" class="border-2 border-gray-300 p-2 rounded-lg mr-14">
+                    </div>
+
+                    <div class="flex justify-between items-center mb-2">
+                        <label for="password" class="mr-2 font-semibold">Password :</label>
+                        <input type="password" id="password" placeholder="Enter password" class="border-2 border-gray-300 p-2 rounded-lg mr-14">
+                    </div>
+
+                    <div class="flex justify-between items-center mb-2">
+                        <label for="phone" class="mr-2 font-semibold">Address :</label>
+                        <input type="text" id="phone" name="phone" placeholder="Enter your phone number" class="border-2 border-gray-300 p-2 rounded-lg mr-14">
+                    </div>
+                </div>
+            </div>
+
             <!-- Sign Up button -->
                 <div>
                     <a href="login.php" class="bg-blue-500 text-white p-2 rounded-lg hover:bg-blue-700 block w-full text-center">Sign Up</a>
